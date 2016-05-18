@@ -22,8 +22,6 @@ public class Huesped {
 	
 	private int tiempoEstancia;
 	
-	private int nReserva;
-	
 	private String tipoCliente;
 	
 	//private Servicios servicios;
@@ -34,11 +32,15 @@ public class Huesped {
 	
 	private String email;
 	
+	private String wifiPass;
+	
+	
+	public Huesped(){}
 	
 	
 	public Huesped(String nombre, String apellido, String dni, String pasaporte, int puntos, int cuentaFinal,
-			int nHabitacion, int tiempoEstancia, int nReserva, String tipoCliente, String nacionalidad, int telefono,
-			String email) {
+			int nHabitacion, int tiempoEstancia, String tipoCliente, String nacionalidad, int telefono,
+			String email, String wifiPass) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -48,13 +50,23 @@ public class Huesped {
 		this.cuentaFinal = cuentaFinal;
 		this.nHabitacion = nHabitacion;
 		this.tiempoEstancia = tiempoEstancia;
-		this.nReserva = nReserva;
 		this.tipoCliente = tipoCliente;
-		Nacionalidad = nacionalidad;
+		this.Nacionalidad = nacionalidad;
 		this.telefono = telefono;
 		this.email = email;
+		this.wifiPass = wifiPass;
 	}
 
+
+
+	public String getWifiPass() {
+		return wifiPass;
+	}
+
+
+	public void setWifiPass(String wifiPass) {
+		this.wifiPass = wifiPass;
+	}
 
 
 	public String getNombre() {
@@ -153,18 +165,6 @@ public class Huesped {
 
 
 
-	public int getnReserva() {
-		return nReserva;
-	}
-
-
-
-	public void setnReserva(int nReserva) {
-		this.nReserva = nReserva;
-	}
-
-
-
 	public String getTipoCliente() {
 		return tipoCliente;
 	}
@@ -233,15 +233,10 @@ public class Huesped {
 		this.email = Utilidades.leerCadena();
 		GestionClientes a = new GestionClientes();
 		
-		return new Huesped(this.nombre,this.apellido,this.dni,this.pasaporte,0,0,this.nHabitacion,this.tiempoEstancia,a.nextReserva(a.aReservas),this.tipoCliente,this.Nacionalidad,this.telefono,this.email);
+		return new Huesped(this.nombre,this.apellido,this.dni,this.pasaporte,0,0,this.nHabitacion,this.tiempoEstancia,this.tipoCliente,this.Nacionalidad,this.telefono,this.email,a.newPass());
 	}
 
-	/*public int aleatorio1(){
-		int min = 0; int max = ;
-		Random random = new Random();
-		int aleatoriofilas = (int)random.nextInt(max - min + 1) + min;
-		return aleatoriofilas;
-	}	*/
+	
 	
 	
 

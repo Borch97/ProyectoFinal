@@ -1,5 +1,6 @@
 package Hotel.base;
 
+import java.util.Date;
 import java.util.Random;
 
 import Hotel.gestion.GestionHabitaciones;
@@ -7,6 +8,8 @@ import Hotel.utilidades.Utilidades;
 
 public class Habitacion {
 
+	Date fecha = new Date();
+	
 	private int id;
 	
 	private String estado;
@@ -21,15 +24,16 @@ public class Habitacion {
 	
 	private String estadoPago;
 	
-	private String fechaIn;
+	private Date fechaIn = fecha;
 	
-	private String fechaOut;
+	private Date fechaOut;
 	
 	//private Servicios sDisponibles;
 	
 	
+	public Habitacion(){}
 	public Habitacion(int id, String estado, String tipo, double precio, int numeroHabitacion, int piso,
-			String estadoPago, String fechaIn, String fechaOut) {
+			String estadoPago, Date fechaIn, Date fechaOut) {
 		super();
 		this.id = id;
 		this.estado = estado;
@@ -127,25 +131,25 @@ public class Habitacion {
 
 
 
-	public String getFechaIn() {
+	public Date getFechaIn() {
 		return fechaIn;
 	}
 
 
 
-	public void setFechaIn(String fechaIn) {
+	public void setFechaIn(Date fechaIn) {
 		this.fechaIn = fechaIn;
 	}
 
 
 
-	public String getFechaOut() {
+	public Date getFechaOut() {
 		return fechaOut;
 	}
 
 
 
-	public void setFechaOut(String fechaOut) {
+	public void setFechaOut(Date fechaOut) {
 		this.fechaOut = fechaOut;
 	}
 
