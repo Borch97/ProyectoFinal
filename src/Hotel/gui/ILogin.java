@@ -1,6 +1,6 @@
 package Hotel.gui;
 
-import data.Usuario;
+import Hotel.gui.Usuario;
 
 public interface ILogin {
 	public boolean login(String usuario, String contraseña);
